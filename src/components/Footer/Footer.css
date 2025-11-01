@@ -44,3 +44,29 @@
   font-size: 13px;
   color: #aaa;
 }
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 12px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #3f8efc; /* Blue hover effect */
+}
+
+.contact-snippet {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 10px;
+  display: block;
+}

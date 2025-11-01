@@ -1,24 +1,28 @@
+
 // src/pages/Home.jsx
 import React, { useEffect, useState } from 'react';
 import './Home.css';
-import exe1 from '../assets/exe1.jpg';
-import exe2 from '../assets/exe2.jpg';
-import exe3 from '../assets/exe3.jpg';
-import exe4 from '../assets/exe4.jpg';
-
+import slide1 from '../assets/slide1.jpg';
+import slide2 from '../assets/slide2.jpg';
+import slide3 from '../assets/slide3.jpg';
+import slide4 from '../assets/slide4.jpg';
+import slide5 from '../assets/slide5.jpg';
+import slide6 from '../assets/slide6.jpg';
+import slide7 from '../assets/slide7.jpg';
 import chem2 from '../assets/chem2.png';
 import chem3 from '../assets/chem3.png';
 import chem4 from '../assets/chem4.png';
-import chemistry4 from '../assets/chemistry4.png';
-
-import iso from '../assets/iso.png';
+import chem7 from '../assets/chem7.png';
+import Rizan from '../assets/Rizan.png';
+import iso1 from '../assets/iso1.jpg';
+import iso2 from '../assets/iso2.jpg';
 import who from '../assets/who.png';
 import accediate3 from '../assets/accediate3.png';
 import accediate4 from '../assets/accediate4.png';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [exe1, exe2, exe3, exe4];
+  const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +36,7 @@ const Home = () => {
       title: 'N-Nitroso Vortioxetine',
       img: chem2,
       batch: 'EXL-001',
-      cas: '123456-78-9',
+      cas: '',
       formula: 'C18H22N2S',
       weight: '298.45',
     },
@@ -40,7 +44,7 @@ const Home = () => {
       title: 'Clarithromycin‑13CD3',
       img: chem3,
       batch: 'EXL-002',
-      cas: '987654-32-1',
+      cas: '',
       formula: 'C38H66D3N1O13',
       weight: '751.0',
     },
@@ -48,18 +52,28 @@ const Home = () => {
       title: 'N-Nitroso-varenicline',
       img: chem4,
       batch: 'EXL-003',
-      cas: '456789-01-2',
+      cas: '',
       formula: 'C13H13N3O',
       weight: '227.26',
     },
     {
-      title: 'N-Nitrosodimethylamine – 13C2D6',
-      img: chemistry4,
+      title: 'N-Nitroso Rizatriptan',
+      img: Rizan,
       batch: 'EXL-004',
-      cas: '234567-89-0',
-      formula: '13C2D6N2O',
-      weight: '82.1',
+      cas: '',
+      formula: 'C15H18N6O',
+      weight: '298.34',
     },
+    {
+      title: 'N-Nitroso Enalapril',
+      img: chem7,
+      batch: 'EXL-005',
+      cas: '',
+      formula: 'C20H27N3O6',
+      weight: '405.44',
+    },
+
+
   ];
 
   return (
@@ -87,8 +101,12 @@ const Home = () => {
         <div className="products">
           {products.map((product, i) => (
             <div className="product-card" key={i}>
-              <div className="product-title">{product.title}</div>
-              <img src={product.img} alt={product.title} />
+              <h3 className="product-title" title={product.title}>
+                {product.title}
+              </h3>
+              <div className="product-img">
+                <img src={product.img} alt={product.title} />
+              </div>
               <table className="product-details">
                 <tbody>
                   <tr><td>Batch No.</td><td>{product.batch}</td></tr>
@@ -98,7 +116,16 @@ const Home = () => {
                   <tr><td>Inventory</td><td>In Stock</td></tr>
                 </tbody>
               </table>
-              <button className="btn">Request Quote</button>
+              <div className="button-wrapper">
+                <a
+                  href={`mailto:info@exeluslabs.com?subject=${encodeURIComponent('Request Quote for ' + product.title)}`}
+
+                  className="btn"
+                >
+                  Request Quote
+                </a>
+
+              </div>
             </div>
           ))}
           <div className="updates-card">
@@ -107,15 +134,15 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Accreditation Section */}
       <section className="section">
         <h2>Our Accreditation</h2>
         <div className="accreditation-scroll-wrapper">
-          <div className="badge"><img src={iso} alt="ISO Certified" /><p>ISO Certified</p></div>
-          <div className="badge"><img src={who} alt="WHO GMP Certified" /><p>WHO GMP Certified</p></div>
-          <div className="badge"><img src={accediate3} alt="Accreditation 3" /><p>Accreditation 3</p></div>
-          <div className="badge"><img src={accediate4} alt="Accreditation 4" /><p>Accreditation 4</p></div>
+          <div className="badge"><img src={iso1} alt="ISO Certified" /></div>
+          <div className="badge"><img src={iso2} alt="ISO Certified" /></div>
+          <div className="badge"><img src={who} alt="WHO GMP Certified" /></div>
+          <div className="badge"><img src={accediate3} alt="Accreditation 3" /></div>
+          <div className="badge"><img src={accediate4} alt="Accreditation 4" /></div>
         </div>
       </section>
     </div>

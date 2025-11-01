@@ -21,11 +21,7 @@ const ContactUs = () => {
           <div className="contact-details">
             <div className="contact-row">
               <div className="icon-box purple"><FaPhoneAlt /></div>
-              <p>+91 78995 40212</p>
-            </div>
-            <div className="contact-row">
-              <div className="icon-box purple"><FaPhoneAlt /></div>
-              <p>+91 97096 66777</p>
+              <p>+91 78995 40212 , +91 97096 66777</p>
             </div>
             <div className="contact-row">
               <div className="icon-box purple"><FaEnvelope /></div>
@@ -34,7 +30,7 @@ const ContactUs = () => {
             <div className="contact-row">
               <div className="icon-box purple"><FaMapMarkerAlt /></div>
               <a
-                href="https://www.google.com/maps?q=Suraram,+Hyderabad,+Telangana+-+500055"
+                href="https://maps.app.goo.gl/RuyXpW2aYDc8qku78"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="location-link"

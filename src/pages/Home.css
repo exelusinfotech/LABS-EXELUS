@@ -1,15 +1,18 @@
-/* Home.css */
-
+/* Global Layout */
 .home {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f9ff;
   color: #1e1e1e;
 }
 
-/* Slideshow */
+/* ========================
+   🔄 Slideshow (Hero Area)
+======================== */
 .slideshow-container {
   width: 100%;
-  height: 400px;
+  height: 60vh;
+  min-height: 300px;
+
   overflow: hidden;
   position: relative;
   background: #000;
@@ -25,7 +28,7 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.slide img {
+.slide img.full-slide {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -35,7 +38,9 @@
   display: block;
 }
 
-/* Section */
+/* ========================
+   📢 Section Headers
+======================== */
 .section {
   padding: 60px 40px;
   background-color: #f5f9ff;
@@ -49,7 +54,9 @@
   font-weight: bold;
 }
 
-/* About Section */
+/* ========================
+   🧪 About Section
+======================== */
 .about-section {
   background-color: #f9fbff;
   color: #333;
@@ -63,76 +70,145 @@
   line-height: 1.8;
 }
 
-/* Products */
+/* ========================
+   🧪 Products Section
+======================== */
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
 }
 
 .product-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 300px;
+  min-height: 580px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #dce3ec;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   padding: 20px;
-  width: 260px;
-  text-align: center;
   transition: transform 0.3s ease;
 }
 
+.products .product-card {
+  max-width: 300px;
+  min-height: 580px;
+}
+
 .product-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
+
+}
+
+.product-card:hover .product-img {
+  border: 1px solid #d0dcf0;
+  /* very soft blue border on hover */
 }
 
 .product-title {
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-  color: #111;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  /* ✅ this resolves the warning */
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  /* optional fallback */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
-.product-card img {
+.product-img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
+  height: 130px;
+  background-color: #ffffff;
+  /* ✅ Always white */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  /* optional: to soften the box */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+  /* optional subtle depth */
 }
+
+.product-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background-color: transparent;
+  /* ✅ Keep actual image transparent */
+}
+
 
 .product-details {
-  margin: 16px 0;
   width: 100%;
   font-size: 0.9rem;
+  border-collapse: collapse;
+  margin-bottom: 16px 0;
 }
 
 .product-details td {
-  padding: 4px 8px;
-  color: #444;
+  padding: 6px 8px;
+  border: 1px solid #e3eaf3;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 180px;
 }
 
-.product-details td:first-child {
-  font-weight: 600;
-  text-align: left;
-  color: #222;
+/* CTA Button */
+.button-wrapper {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
 }
 
 .btn {
-  background: #0046d5;
+  background-color: #007bff;
   color: white;
-  padding: 10px 16px;
+  padding: 10px 20px;
+  font-weight: 600;
   border: none;
   border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  width: 100%;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
 }
 
 .btn:hover {
-  background: #0032a5;
+  background-color: #0056b3;
 }
 
-/* Latest Updates */
+/* ========================
+   📱 Responsive Products Grid
+======================== */
+@media (max-width: 1000px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================
+   🔔 Updates Card
+======================== */
 .updates-card {
   background-color: #eaf1ff;
   border-radius: 12px;
@@ -141,6 +217,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
 }
 
 .card-title {
@@ -150,7 +228,9 @@
   color: #123c87;
 }
 
-/* Accreditation */
+/* ========================
+   ✅ Accreditation Logos
+======================== */
 .accreditation-scroll-wrapper {
   display: flex;
   justify-content: center;
@@ -180,4 +260,99 @@
 .badge span {
   font-size: 0.95rem;
   color: #234;
+}
+
+/* ========================
+   🖼 Full Slide Image
+======================== */
+.full-slide {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  image-rendering: auto;
+}
+
+/* 🔁 Make slideshow more responsive */
+.slideshow-container {
+  height: 60vh;
+  min-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .slideshow-container {
+    height: 40vh;
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .product-card {
+    max-width: 100%;
+    min-height: unset;
+  }
+
+  .product-img {
+    height: 120px;
+  }
+
+  .product-details td {
+    font-size: 0.85rem;
+    max-width: 140px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+
+  .updates-card {
+    width: 100%;
+    padding: 20px;
+    margin-top: 16px;
+  }
+
+  .accreditation-scroll-wrapper {
+    gap: 16px;
+    padding: 0 10px;
+  }
+
+  .badge {
+    width: 100px;
+  }
+
+  .badge img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .badge span {
+    font-size: 0.85rem;
+  }
+}
+
+/* Ultra small devices */
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 20px;
+  }
+
+  .product-details td {
+    font-size: 0.75rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
 }
