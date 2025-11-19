@@ -4,10 +4,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import lab1 from '../assets/lab1.png';
-import lab2 from '../assets/lab2.png';
+import lab1 from '../assets/lab1.jpg';
+import lab2 from '../assets/lab2.jpg';
 import lab3 from '../assets/lab3.png';
-import lab4 from '../assets/lab4.png';
+import lab4 from '../assets/lab4.jpg';
+import custsyn from '../assets/custsyn.jpg';
 
 const CustomSynthesis = () => {
   useEffect(() => {
@@ -54,6 +55,9 @@ const CustomSynthesis = () => {
       <div className="custom-header">
         <h1>Custom Synthesis</h1>
         <p>Precision chemistry solutions tailored to your research needs</p>
+        <a href="/Exelus- Custom Synthesis.pdf" download="Exelus- Custom Synthesis.pdf" className="download-btn">
+          Download PDF
+        </a>
       </div>
 
       <div className="custom-section">
@@ -84,10 +88,10 @@ const CustomSynthesis = () => {
         <div className="details-text">
           <h2>Capabilities and Specialties</h2>
           <p>
-            At Exelus Labs, our advanced synthetic chemistry laboratories are outfitted with cutting-edge preparative and analytical equipment, and staffed by highly qualified scientists. We offer unmatched expertise in carbohydrate and nucleoside chemistry, making us a trusted partner for designing efficient, scalable processes or working seamlessly with your existing methods.
+            At Exelus Labs, our advanced synthetic chemistry laboratories are outfitted with cutting-edge equipment, and staffed by highly qualified scientists. We offer unmatched expertise in custom synthesis,building blocks, intermediates speciality chemicals , making us a trusted partner for designing efficient, scalable processes or working seamlessly with your existing methods.
           </p>
           <p>
-            Whether you need pharmaceutical ingredients or other complex chemical entities, we deliver precision, reliability, and scientific excellence at every step.
+            Whether you need pharmaceutical ingredients or other complex chemical entities, we deliver precision, reliability, and scientific excellence at every step.
           </p>
         </div>
       </div>
@@ -96,11 +100,10 @@ const CustomSynthesis = () => {
         <div className="details-text">
           <h2>Quality and Analysis</h2>
           <p>
-            At Exelus Labs, quality isn’t just a standard — it’s a core principle that defines every aspect of our operations. From our comprehensive quality management systems to cutting-edge laboratories and a team of expert scientists, technicians, administrators, and project managers, we are committed to delivering excellence.
-
+            At Exelus Labs, quality isn’t just a standard — it’s a core principle that defines every aspect of our operations. From our comprehensive quality management systems to cutting-edge laboratories and a team of expert scientists, technicians, administrators, and project managers, we are committed to delivering excellence
           </p>
           <p>
-            Our research and synthesis facilities adhere to ISO 9001:2015 standards, enabling precise and efficient in-process and final product quality control through advanced analytical technologies. This capability allows our teams to thoroughly understand, refine, and complete synthesis processes, ensuring the production of high-quality outcomes. Beyond certifications, Exelus Labs is fully licensed to manufacture, store, distribute, and sell controlled substances, ensuring full regulatory compliance at every step.
+            Our research and synthesis facilities adhere to ISO 9001:2015,iso14001:2015 standards, enabling precise and efficient in-process and final product quality control through advanced analytical technologies. This capability allows our teams to thoroughly understand, refine, and complete synthesis processes, ensuring the production of high-quality outcomes. Beyond certifications, Exelus Labs is fully licensed to manufacture, store, distribute, and sell controlled substances, ensuring full regulatory compliance at every step.
           </p>
         </div>
         <img src={lab2} alt="Quality Analysis" className="lab-image" />

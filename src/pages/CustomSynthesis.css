@@ -21,7 +21,10 @@
 .custom-header {
   text-align: center;
   color: #fff;
-  background: linear-gradient(to right, #4f9dfc, #a267f9);
+  background: linear-gradient(to right, #4f9dfc, #a267f9), url('../assets/custsyn.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
   padding: 4rem 1rem;
   border-radius: 10px;
   margin-bottom: 2rem;
@@ -37,6 +40,22 @@
 .custom-header p {
   font-size: 1.2rem;
   margin-top: 0.5rem;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  opacity: 0.9;
 }
 
 /* Grid Section */
@@ -100,6 +119,7 @@
 .lab-image {
   flex: 1 1 40%;
   max-width: 480px;
+  height: 300px;
   border-radius: 10px;
   object-fit: cover;
   width: 100%;

@@ -31,6 +31,16 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
+  const scrollCarousel = (direction) => {
+    const container = document.querySelector('.products-container');
+    const scrollAmount = 300; // Adjust scroll amount as needed
+    if (direction === 1) {
+      container.scrollLeft += scrollAmount;
+    } else {
+      container.scrollLeft -= scrollAmount;
+    }
+  };
+
   const products = [
     {
       title: 'N-Nitroso Vortioxetine',
@@ -85,53 +95,65 @@ const Home = () => {
             <img src={src} alt={`Slide ${index + 1}`} className="full-slide" />
           </div>
         ))}
+        <button className="explore-btn" onClick={() => document.getElementById('products').scrollIntoView({ behavior: 'smooth' })}>
+          Explore More
+        </button>
       </div>
 
       {/* About Section */}
       <section className="section about-section">
         <h2>About Us</h2>
         <p>
-          Exelus Labs is a leading provider of high-quality chemical reference standards, impurities, and stable isotopes for research and development purposes. We are dedicated to ensuring regulatory compliance and helping pharmaceutical organizations meet global standards. Our team of experienced chemists, stringent quality control processes, and cutting-edge facilities make us a trusted partner in the chemical and pharmaceutical industries.
+          Exelus Labs is a leading provider of high-quality chemical reference standards, pharmaceutical impurities, metabolites, and stable isotopes that support research, development, and regulatory submissions worldwide. We specialize in delivering reliable analytical materials that help pharmaceutical, biotechnology, and research organizations achieve scientific excellence and regulatory compliance.
+        </p>
+        <p>
+          With a strong focus on quality, precision, and innovation, Exelus Labs has built a reputation for excellence in the field of impurity profiling and characterization. Our state-of-the-art analytical and synthesis facilities, combined with a team of highly qualified scientists, enable us to develop and supply complex reference materials with uncompromising purity and accuracy.
         </p>
       </section>
 
       {/* Products Section */}
-      <section className="section">
+      <section id="products" className="section">
         <h2>Latest Products</h2>
-        <div className="products">
-          {products.map((product, i) => (
-            <div className="product-card" key={i}>
-              <h3 className="product-title" title={product.title}>
-                {product.title}
-              </h3>
-              <div className="product-img">
-                <img src={product.img} alt={product.title} />
-              </div>
-              <table className="product-details">
-                <tbody>
-                  <tr><td>Batch No.</td><td>{product.batch}</td></tr>
-                  <tr><td>CAS No.</td><td>{product.cas}</td></tr>
-                  <tr><td>Molecular Formula</td><td>{product.formula}</td></tr>
-                  <tr><td>Molecular Weight</td><td>{product.weight}</td></tr>
-                  <tr><td>Inventory</td><td>In Stock</td></tr>
-                </tbody>
-              </table>
-              <div className="button-wrapper">
-                <a
-                  href={`mailto:info@exeluslabs.com?subject=${encodeURIComponent('Request Quote for ' + product.title)}`}
+        <div className="products-carousel">
+          <button className="carousel-arrow left-arrow" onClick={() => scrollCarousel(-1)}>&#10094;</button>
+          <div className="products-container">
+            <div className="products">
+              {products.map((product, i) => (
+                <div className="product-card" key={i}>
+                  <h3 className="product-title" title={product.title}>
+                    {product.title}
+                  </h3>
+                  <div className="product-img">
+                    <img src={product.img} alt={product.title} />
+                  </div>
+                  <table className="product-details">
+                    <tbody>
+                      <tr><td>Batch No.</td><td>{product.batch}</td></tr>
+                      <tr><td>CAS No.</td><td>{product.cas}</td></tr>
+                      <tr><td>Molecular Formula</td><td>{product.formula}</td></tr>
+                      <tr><td>Molecular Weight</td><td>{product.weight}</td></tr>
+                      <tr><td>Inventory</td><td>In Stock</td></tr>
+                    </tbody>
+                  </table>
+                  <div className="button-wrapper">
+                    <a
+                      href={`mailto:info@exeluslabs.com?subject=${encodeURIComponent('Request Quote for ' + product.title)}`}
 
-                  className="btn"
-                >
-                  Request Quote
-                </a>
+                      className="btn"
+                    >
+                      Request Quote
+                    </a>
 
+                  </div>
+                </div>
+              ))}
+              <div className="updates-card">
+                <h3 className="card-title">Latest Updates</h3>
+                <p>Stay tuned for our newest products and innovations</p>
               </div>
             </div>
-          ))}
-          <div className="updates-card">
-            <h3 className="card-title">Latest Updates</h3>
-            <p>Stay tuned for our newest products and innovations</p>
           </div>
+          <button className="carousel-arrow right-arrow" onClick={() => scrollCarousel(1)}>&#10095;</button>
         </div>
       </section>
       {/* Accreditation Section */}

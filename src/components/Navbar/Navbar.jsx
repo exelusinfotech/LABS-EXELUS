@@ -10,15 +10,18 @@ const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const { products } = useContext(ProductContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState(null);
 
   const navigate = useNavigate();
 
   const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
+    if (closeTimeout) clearTimeout(closeTimeout);
+    setDropdownOpen(true);
   };
 
   const closeDropdown = () => {
-    setDropdownOpen(false);
+    const timeout = setTimeout(() => setDropdownOpen(false), 2000); // 2 seconds delay
+    setCloseTimeout(timeout);
   };
 
   const toggleMenu = () => {
@@ -52,8 +55,9 @@ const Navbar = () => {
   };
 
   const handleMenuItemClick = () => {
+    if (closeTimeout) clearTimeout(closeTimeout);
     closeMenu();
-    closeDropdown();
+    setDropdownOpen(false);
   };
 
   // Close dropdown when clicked outside
@@ -91,7 +95,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="contact-info">
-          <a href="mailto:info@exeluslabs.com?subject=Inquiry&body=Hello%20Exelus%20Labs,">
+          <a href="mailto:info@exeluslabs.com?subject=Inquiry&body=Hello%20Exelus%20Labs">
             info@exeluslabs.com
           </a>
           <a href="tel:+917989540212">☎ +91 79895 40212</a>
@@ -127,12 +131,12 @@ const Navbar = () => {
               Products
             </Link>
           </li>
-          <li className="dropdown" ref={dropdownRef}>
-            <span className="dropdown-toggle" onClick={toggleDropdown}>
+          <li className="dropdown" ref={dropdownRef} onMouseLeave={closeDropdown}>
+            <span className="dropdown-toggle" onMouseEnter={toggleDropdown}>
               Services
             </span>
             {isDropdownOpen && (
-              <ul className="dropdown-content">
+              <ul className="dropdown-content" onMouseEnter={toggleDropdown}>
                 <li>
                   <Link to="/services" onClick={handleMenuItemClick}>
                     Custom Synthesis

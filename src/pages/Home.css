@@ -10,8 +10,8 @@
 ======================== */
 .slideshow-container {
   width: 100%;
-  height: 60vh;
-  min-height: 300px;
+  height: 80vh;
+  min-height: 400px;
 
   overflow: hidden;
   position: relative;
@@ -36,6 +36,28 @@
 
 .slide.active {
   display: block;
+}
+
+/* Explore More Button */
+.explore-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.explore-btn:hover {
+  background-color: #0056b3;
 }
 
 /* ========================
@@ -73,18 +95,57 @@
 /* ========================
    🧪 Products Section
 ======================== */
+.products-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel-arrow {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.carousel-arrow:hover {
+  background-color: #0056b3;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.products-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 1200px;
+}
+
 .products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 20px;
-  justify-items: center;
   padding: 20px;
+  min-width: max-content;
 }
 
 .product-card {
   width: 100%;
-  max-width: 300px;
-  min-height: 580px;
+  max-width: 240px;
+  min-height: 464px;
   background-color: #ffffff;
   border-radius: 16px;
   border: 1px solid #dce3ec;
@@ -98,8 +159,8 @@
 }
 
 .products .product-card {
-  max-width: 300px;
-  min-height: 580px;
+  max-width: 240px;
+  min-height: 464px;
 }
 
 .product-card:hover {
@@ -126,11 +187,16 @@
   word-break: break-word;
   overflow-wrap: break-word;
   white-space: normal;
+  color: white;
+  background-color: #007bff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .product-img {
   width: 100%;
-  height: 130px;
+  height: 104px;
   background-color: #ffffff;
   /* ✅ Always white */
   display: flex;
@@ -192,17 +258,53 @@
 }
 
 /* ========================
-   📱 Responsive Products Grid
+   📱 Responsive Products Carousel
 ======================== */
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
+  .products-carousel {
+    padding: 0 40px;
+  }
+
+  .carousel-arrow {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .left-arrow {
+    left: 0;
+  }
+
+  .right-arrow {
+    right: 0;
+  }
+
   .products {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .product-card {
+    max-width: 200px;
+    min-height: 400px;
+  }
+
+  .updates-card {
+    width: 220px;
   }
 }
 
-@media (max-width: 600px) {
-  .products {
-    grid-template-columns: 1fr;
+@media (max-width: 480px) {
+  .products-carousel {
+    padding: 0 30px;
+  }
+
+  .product-card {
+    max-width: 180px;
+    min-height: 350px;
+  }
+
+  .updates-card {
+    width: 200px;
   }
 }
 
@@ -273,10 +375,6 @@
 }
 
 /* 🔁 Make slideshow more responsive */
-.slideshow-container {
-  height: 60vh;
-  min-height: 300px;
-}
 
 @media (max-width: 768px) {
   .slideshow-container {
@@ -299,7 +397,7 @@
   }
 
   .product-img {
-    height: 120px;
+    height: 96px;
   }
 
   .product-details td {
