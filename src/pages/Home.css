@@ -381,6 +381,10 @@
     height: 40vh;
   }
 
+  .slide img.full-slide {
+    object-position: left center;
+  }
+
   .section h2 {
     font-size: 1.8rem;
   }
