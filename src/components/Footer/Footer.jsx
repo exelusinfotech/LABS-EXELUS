@@ -43,12 +43,12 @@ const Footer = () => {
           </p>
           <p>
             <i className="fas fa-map-marker-alt"></i>&nbsp;
-            <a href="https://maps.app.goo.gl/22jL8jTjBt5pdRoBA" target="_blank" rel="noopener noreferrer">
-              Hyderabad, India
+            <a href="https://share.google/NEc5f2MUpQDeanMe6" target="_blank" rel="noopener noreferrer">
+              Location
             </a>
           </p>
           <p className="contact-snippet">
-            Certified ISO 9001:2015 | Serving clients in 20+ countries
+            Certified ISO 9001:2015 |ISO 14001:2015 | Serving clients in 20+ countries
           </p>
           <div className="social-links">
             <a href="https://www.instagram.com/exelus_labs?igsh=MXEyeWU2bXF0NHdhcg==" target="_blank" rel="noopener noreferrer">

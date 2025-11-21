@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="product-card" onClick={() => navigate(`/products/${product.id}`)}>
-      <h3>{product.name}</h3>
+      <h4>{product.name}</h4>
       <i className="fas fa-arrow-circle-right"></i>
     </div>
   );

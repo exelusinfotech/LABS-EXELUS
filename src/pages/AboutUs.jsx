@@ -5,6 +5,7 @@ import './AboutUs.css';
 
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
+import aboutUsFooterBg from '../assets/about-us-footer background image.jpg';
 
 const AboutUs = () => {
   useEffect(() => {
@@ -64,7 +65,7 @@ const AboutUs = () => {
           </div>
           <div className="feature-card" data-aos="zoom-in" data-aos-delay="150">
             <h3>⚗️ Custom Organic Synthesis</h3>
-            <p>From novel compound development to complex multi-step synthesis, our team delivers scalable solutions from 1 mg to 1 kg, ensuring flexibility, efficiency, and precision for your specific needs.</p>
+            <p>From novel compound development to complex multi-step synthesis, our team delivers scalable solutions, ensuring flexibility, efficiency, and precision for your specific needs.</p>
           </div>
         </div>
       </div>

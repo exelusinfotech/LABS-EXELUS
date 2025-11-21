@@ -56,7 +56,7 @@ const CustomSynthesis = () => {
         <h1>Custom Synthesis</h1>
         <p>Precision chemistry solutions tailored to your research needs</p>
         <a href="/Exelus- Custom Synthesis.pdf" download="Exelus- Custom Synthesis.pdf" className="download-btn">
-          Download PDF
+          Product list
         </a>
       </div>
 
@@ -103,7 +103,7 @@ const CustomSynthesis = () => {
             At Exelus Labs, quality isn’t just a standard — it’s a core principle that defines every aspect of our operations. From our comprehensive quality management systems to cutting-edge laboratories and a team of expert scientists, technicians, administrators, and project managers, we are committed to delivering excellence
           </p>
           <p>
-            Our research and synthesis facilities adhere to ISO 9001:2015,iso14001:2015 standards, enabling precise and efficient in-process and final product quality control through advanced analytical technologies. This capability allows our teams to thoroughly understand, refine, and complete synthesis processes, ensuring the production of high-quality outcomes. Beyond certifications, Exelus Labs is fully licensed to manufacture, store, distribute, and sell controlled substances, ensuring full regulatory compliance at every step.
+            Our research and synthesis facilities adhere to ISO 9001:2015, ISO 14001:2015 standards, enabling precise and efficient in-process and final product quality control through advanced analytical technologies. This capability allows our teams to thoroughly understand, refine, and complete synthesis processes, ensuring the production of high-quality outcomes. Beyond certifications, Exelus Labs is fully licensed to manufacture, store, distribute, and sell controlled substances, ensuring full regulatory compliance at every step.
           </p>
         </div>
         <img src={lab2} alt="Quality Analysis" className="lab-image" />

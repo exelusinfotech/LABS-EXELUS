@@ -30,12 +30,12 @@ const ContactUs = () => {
             <div className="contact-row">
               <div className="icon-box purple"><FaMapMarkerAlt /></div>
               <a
-                href="https://maps.app.goo.gl/RuyXpW2aYDc8qku78"
+                href="https://www.google.com/maps/place/Gaddapotharam,+Kistaipally,+Telangana+502319/data=!4m6!3m5!1s0x3bcb8c1803327c51:0xf3902e10b54d4216!7e2!8m2!3d17.5850758!4d78.37308399999999"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="location-link"
               >
-                Suraram, Hyderabad, Telangana - 500055
+                Location
               </a>
             </div>
           </div>
@@ -60,14 +60,13 @@ const ContactUs = () => {
         <h2>Our Location</h2>
         <div className="map-container">
           <iframe
-            title="Suraram Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30433.936984991356!2d78.41817735162935!3d17.543655405585547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8fb593e4d65b%3A0x3bc97157a1deb28d!2sSuraram%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1751014557992!5m2!1sen!2sin"
+            title="Location"
+            src="https://maps.google.com/maps?q=Gaddapotharam,+Kistaipally,+Telangana+502319&output=embed"
             width="100%"
             height="450"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </section>
